@@ -78,3 +78,7 @@ obj-y += soc/
 obj-y += dsp/
 obj-y += ipc/
 obj-y += asoc/
+
+# Add all subdirectories to the include search path to resolve trace headers
+audio_include_dirs := $(shell find $(srctree)/techpack/audio -type d)
+ccflags-y += $(addprefix -I,$(audio_include_dirs))

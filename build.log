@@ -1,0 +1,9 @@
+scripts/kconfig/conf  --syncconfig Kconfig
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  GZIP    kernel/config_data.gz
+  CHK     kernel/kheaders_data.tar.xz
+  Building modules, stage 2.
+  MODPOST 10 modules
+  DTC     arch/arm64/boot/dts/xiaomi/beryllium/beryllium-mp-v2.1.dtb
+  CAT     arch/arm64/boot/Image.gz-dtb
